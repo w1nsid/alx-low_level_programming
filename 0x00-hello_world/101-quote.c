@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-#define message_length 60
+#define message_length 59
 
 /**
  * main - Prints a string to stderr
