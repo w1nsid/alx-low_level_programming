@@ -9,32 +9,33 @@
 
 int main(void)
 {
-	int firstDigit = 0, seconDigit;
+	int i, j, k, l;
 
-	while (firstDigit <= 99)
+	for (i = 0; i < 10; i++)
 	{
-		seconDigit = firstDigit;
-		while (seconDigit <= 99)
+		for (j = 0; j < 10; j++)
 		{
-			if (seconDigit != firstDigit)
+			for (k = i; k < 10; k++)
 			{
-				putchar((firstDigit / 10) + 48);
-				putchar((firstDigit % 10) + 48);
-				putchar(' ');
-				putchar((seconDigit / 10) + 48);
-				putchar((seconDigit % 10) + 48);
-
-				if (firstDigit != 98 || seconDigit != 99)
+				for (l = j + 1; l < 10; l++)
 				{
-					putchar(',');
+					putchar(i + '0');
+					putchar(j + '0');
 					putchar(' ');
+					putchar(k + '0');
+					putchar(l + '0');
+					if (i != 9 || j != 8 || k != 9 || l != 9)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+					else
+					{
+						putchar('\n');
+					}
 				}
 			}
-			++seconDigit;
 		}
-		++firstDigit;
 	}
-	putchar('\n');
-
 	return (0);
 }
