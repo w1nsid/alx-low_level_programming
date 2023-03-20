@@ -9,7 +9,8 @@
 
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k, l, flag;
+	flag = 1;
 
 	for (i = 0; i < 10; i++)
 	{
@@ -17,7 +18,7 @@ int main(void)
 		{
 			for (k = i; k < 10; k++)
 			{
-				for (l = j + 1 * (k == i); l < 10; l++)
+				for (l = (j + 1) * (flag); l < 10; l++)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
@@ -34,7 +35,9 @@ int main(void)
 						putchar('\n');
 					}
 				}
+				flag = 0;
 			}
+			flag = 1;
 		}
 	}
 	return (0);
