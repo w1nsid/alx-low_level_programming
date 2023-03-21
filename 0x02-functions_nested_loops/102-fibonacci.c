@@ -3,7 +3,7 @@
 /**
  * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
  * numbers must be separated by comma followed by a space
- * @n: number to check
+ *
  * Return: 0
  */
 
