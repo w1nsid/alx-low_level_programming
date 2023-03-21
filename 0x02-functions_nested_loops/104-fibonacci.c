@@ -12,18 +12,20 @@ int main(void)
 
 	a = 1;
 	b = 2;
-	printf("%ld, %ld, ", a, b);
+	printf("%lu, %lu, ", a, b);
 	for (i = 0; i < 96; i++)
 	{
 		c = a + b;
 		a = b;
 		b = c;
-		printf("%ld", c);
+		printf("%lu", c);
+
 		if (i != 95)
 		{
 			printf(", ");
 		}
 	}
+
 	printf("\n");
 	return (0);
 }
