@@ -4,14 +4,12 @@ int main(void)
 {
 	unsigned int a1 = 1, a2 = 2;
 	unsigned int b1 = 0, b2 = 0, b3 = 0;
-	unsigned int carry = 0;
 	int i;
 
 	printf("%u, %u", a1, a2);
 
 	for (i = 2; i < 98; i++)
 	{
-		carry = 0;
 		b1 = 0;
 		b2 = 0;
 		b3 = 0;
