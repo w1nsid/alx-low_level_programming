@@ -9,7 +9,6 @@ int main(void)
 	int prev[MAX_DIGITS] = {1};
 	int prev2[MAX_DIGITS] = {0};
 
-	printf("1");
 	for (i = 2; i <= 98; i++)
 	{
 		carry = 0;
