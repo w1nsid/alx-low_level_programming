@@ -7,9 +7,10 @@ int main(void)
 	int i, j, k, carry;
 	int fib[MAX_DIGITS] = {1};
 	int prev[MAX_DIGITS] = {1};
-	int prev2[MAX_DIGITS] = {0};
+	int prev2[MAX_DIGITS] = {1};
 
-	for (i = 2; i <= 98; i++)
+	printf("1");
+	for (i = 1; i < 98; i++)
 	{
 		carry = 0;
 		for (j = 0; j < MAX_DIGITS; j++)
