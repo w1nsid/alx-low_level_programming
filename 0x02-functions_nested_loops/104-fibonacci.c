@@ -1,36 +1,40 @@
 #include <stdio.h>
 
+#define MAX_DIGITS 200
+
 int main(void)
 {
-	unsigned int a1 = 1, a2 = 2;
-	unsigned int b1 = 0, b2 = 0, b3 = 0;
-	int i;
+	int i, j, k, carry;
+	int fib[MAX_DIGITS] = {1};
+	int prev[MAX_DIGITS] = {1};
+	int prev2[MAX_DIGITS] = {0};
 
-	printf("%u, %u", a1, a2);
-
-	for (i = 2; i < 98; i++)
+	printf("1");
+	for (i = 2; i <= 98; i++)
 	{
-		b1 = 0;
-		b2 = 0;
-		b3 = 0;
-		b1 += (a1 % 10) + (a2 % 10);
-		b2 += (a1 / 10) + (a2 / 10);
-		if (b1 >= 10)
+		carry = 0;
+		for (j = 0; j < MAX_DIGITS; j++)
 		{
-			b1 -= 10;
-			b2 += 1;
+			fib[j] = prev[j] + prev2[j] + carry;
+			carry = fib[j] / 10;
+			fib[j] %= 10;
 		}
-		b3 += (a2 / 10);
-		if (b2 >= 10)
+		printf(", ");
+		for (k = MAX_DIGITS - 1; k >= 0; k--)
 		{
-			b2 -= 10;
-			b3 += 1;
+			if (fib[k] != 0)
+				break;
 		}
-		printf(", %u%u%u", b3, b2, b1);
-		a1 = a2;
-		a2 = (b3 * 100) + (b2 * 10) + b1;
+		for (; k >= 0; k--)
+		{
+			printf("%d", fib[k]);
+		}
+		for (j = 0; j < MAX_DIGITS; j++)
+		{
+			prev2[j] = prev[j];
+			prev[j] = fib[j];
+		}
 	}
-
 	printf("\n");
 	return 0;
 }
