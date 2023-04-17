@@ -2,10 +2,10 @@
 #include "dog.h"
 
 /**
- * free_dog - ...
- * @d: ...
+ * free_dog - frees dogs from memory
+ * @d: pointer to dog
  *
- * Return: ...
+ * Return: Nothing
  */
 void free_dog(dog_t *d)
 {
