@@ -1,17 +1,21 @@
+extern printf
+
+section .data
+    msg db "Hello, Holberton", 10, 0
+    fmt db "%s", 0
+
 section .text
-global main
+    global main
 
 main:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, msg
-	mov rdx, msglen
-	syscall
+    push rbp
+    mov rbp, rsp
 
-	mov rax, 60
-	mov rdi, 0
-	syscall
+    lea rdi, [fmt]
+    lea rsi, [msg]
+    xor eax, eax
+    call printf
 
-section .rodata
-	msg: db "Hello, Holberton", 10
-	msglen: equ $ - msg
+    mov eax, 0
+    leave
+    ret
