@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * flip_bits - Counts the number of bits needed to flip to convert one number to another
+ * flip_bits - Counts the number of bits needed to flip
+ * to convert one number to another
  * @num1: Input number 1
  * @num2: Input number 2
  * Return: Number of bits to flip
@@ -17,5 +18,5 @@ unsigned int flip_bits(unsigned long int num1, unsigned long int num2)
 			count++;
 	}
 
-	return count;
+	return (count);
 }
