@@ -72,8 +72,7 @@ int main(int argc, char *argv[])
 	read_status = read(src_file, buffer, 1024);
 	dest_file = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (src_file == -1 || read_status == -1)
 		{
 			dprintf(STDERR_FILENO,
