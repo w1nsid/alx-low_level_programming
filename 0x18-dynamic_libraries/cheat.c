@@ -1,12 +1,15 @@
+#include <unistd.h>
+#include <string.h>
+
 int rand()
 {
-	static int currentElementIndex = 0;
+	static int Index = 0;
 	int sequence[] = {8, 8, 7, 9, 23, 24};
 	int sequenceLength = sizeof(sequence) / sizeof(sequence[0]);
 
-	int nextElement = sequence[currentElementIndex];
+	int nextElement = sequence[Index];
 
-	currentElementIndex = (currentElementIndex + 1) % sequenceLength;
+	Index = (Index + 1) % sequenceLength;
 
 	return nextElement;
 }
