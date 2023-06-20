@@ -1,15 +1,19 @@
-#include <unistd.h>
-#include <string.h>
-
 int rand()
 {
-	static int Index = 0;
-	int sequence[] = {8, 8, 7, 9, 23, 24};
-	int sequenceLength = sizeof(sequence) / sizeof(sequence[0]);
+	static int ct = -1;
 
-	int nextElement = sequence[Index];
-
-	Index = (Index + 1) % sequenceLength;
-
-	return nextElement;
+	ct++;
+	if (ct == 0)
+		return 8;
+	if (ct == 1)
+		return 8;
+	if (ct == 2)
+		return 7;
+	if (ct == 3)
+		return 9;
+	if (ct == 4)
+		return 23;
+	if (ct == 5)
+		return 74;
+	return ct * ct % 30000;
 }
