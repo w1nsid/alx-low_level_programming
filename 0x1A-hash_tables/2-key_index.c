@@ -2,8 +2,8 @@
 
 /**
  * key_index - retrieves the index of a given key
- * @key: the key for which the index is needed
- * @size: the size of the hash table
+ * @input_key: the key for which the index is needed
+ * @table_size: the size of the hash table
  *
  * Return: the calculated index for the given key
  */

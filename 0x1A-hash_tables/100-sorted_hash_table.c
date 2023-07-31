@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * Establishes a sorted hash table
+ * shash_table_create - Creates a sorted hash table
  * @tableSize: The size of the hash table
  *
  * Return: Pointer to the newly created table, or NULL if unsuccessful
@@ -31,7 +31,7 @@ shash_table_t *shash_table_create(unsigned long int tableSize)
 }
 
 /**
- * Creates a node for the sorted hash table
+ * make_shash_node - Creates a node for the sorted hash table
  * @inputKey: Key for the data
  * @inputValue: Data to be stored
  *
@@ -62,7 +62,8 @@ shash_node_t *make_shash_node(const char *inputKey, const char *inputValue)
 }
 
 /**
- * Inserts a node to the sorted linked list (sorted by key's ASCII)
+ * add_to_sorted_list - Inserts a node to the sorted linked list (sorted by
+ * key's ASCII)
  * @sortedHashTable: The sorted hash table
  * @newNode: The node to be added
  *
@@ -99,7 +100,7 @@ void add_to_sorted_list(shash_table_t *sortedHashTable, shash_node_t *newNode)
 }
 
 /**
- * Assigns a key to a value in the hash table
+ * shash_table_set - Assigns a key to a value in the hash table
  * @sortedHashTable: Sorted hash table
  * @inputKey: Key for the data
  * @inputValue: Data to be added
@@ -145,7 +146,7 @@ int shash_table_set(
 }
 
 /**
- * Fetches a value from the hash table using a key
+ * shash_table_get - Fetches a value from the hash table using a key
  * @sortedHashTable: Hash table
  * @inputKey: Key to the data
  *
@@ -174,7 +175,7 @@ shash_table_get(const shash_table_t *sortedHashTable, const char *inputKey)
 }
 
 /**
- * Prints a sorted hash table
+ * shash_table_print - Prints a sorted hash table
  * @sortedHashTable: Hash table to print
  *
  * Return: void
@@ -200,7 +201,7 @@ void shash_table_print(const shash_table_t *sortedHashTable)
 }
 
 /**
- * Prints a sorted hash table in reverse order
+ * shash_table_print_rev - Prints a sorted hash table in reverse order
  * @sortedHashTable: Hash table to print
  *
  * Return: void
@@ -226,7 +227,7 @@ void shash_table_print_rev(const shash_table_t *sortedHashTable)
 }
 
 /**
- * Deletes a sorted hash table
+ * shash_table_delete - Deletes a sorted hash table
  * @sortedHashTable: Hash table to delete
  *
  * Return: void
